@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+			 xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+			 x:Class="CompraSemanal.Vistas.CrearCadena"
+			 BackgroundColor="CadetBlue"
+			 Title="Crear Cadena">
+
+	<Shell.BackButtonBehavior>
+		<BackButtonBehavior IsVisible="False" IsEnabled="False"/>
+	</Shell.BackButtonBehavior>
+
+	<!--<StackLayout VerticalOptions="Center" HorizontalOptions="Center" >-->
+	<Grid x:Name="GridCrear" ColumnDefinitions="1*,48*,1*"
+		RowDefinitions="auto,auto,auto,auto,auto,auto,auto,auto,auto,auto,auto" VerticalOptions="Center" >
+
+		<Grid ColumnDefinitions="1*,2*" RowDefinitions="auto" Grid.Column="1" Grid.Row="0">
+			<Label Style="{StaticResource EstiloLabelEntry}" Grid.Column="0" Grid.Row="0"
+			Text="Servidor:" />
+			<Entry Style="{StaticResource EstiloEntryOK}" ReturnType="Done"
+			x:Name="xServidor" Placeholder="Nombre del Servidor" Grid.Column="1" Grid.Row="0"/>
+		</Grid>
+		<Label Text="FILA2" x:Name="xErrorServidor" Grid.Row="1" Grid.Column="1"
+			Style="{StaticResource EstiloLabelError}" />
+		<Grid ColumnDefinitions="1*,2*" RowDefinitions="auto" Grid.Column="1" Grid.Row="2">
+			<Label Style="{StaticResource EstiloLabelEntry}" Grid.Column="0" Grid.Row="0"
+			Text="Puerto:" />
+			<Entry Style="{StaticResource EstiloEntryOK}" ReturnType="Done" Keyboard="Numeric"
+			x:Name="xPuerto" Placeholder="3306" Grid.Column="1" Grid.Row="0"/>
+		</Grid>
+		<Label Text="FILA4" x:Name="xErrorPuerto" Grid.Row="3" Grid.Column="1"
+			Style="{StaticResource EstiloLabelError}" />
+		<Grid ColumnDefinitions="1*,2*" RowDefinitions="auto" Grid.Column="1" Grid.Row="4">
+			<Label Style="{StaticResource EstiloLabelEntry}" Grid.Column="0" Grid.Row="0"
+			Text="Usuario:" />
+			<Entry Style="{StaticResource EstiloEntryOK}" ReturnType="Done"
+			x:Name="xUsuario" Placeholder="Nombre de Usuario" Grid.Column="1" Grid.Row="0"/>
+		</Grid>
+		<Label Text="FILA6" x:Name="xErrorUsuario" Grid.Row="5" Grid.Column="1"
+			Style="{StaticResource EstiloLabelError}" />
+		<Grid ColumnDefinitions="1*,2*" RowDefinitions="auto" Grid.Column="1" Grid.Row="6">
+			<Label Style="{StaticResource EstiloLabelEntry}" Grid.Column="0" Grid.Row="0"
+			Text="Password:" />
+			<Entry Style="{StaticResource EstiloEntryOK}" ReturnType="Done"
+			x:Name="xPass" Placeholder="Password" IsPassword="True" Grid.Column="1" Grid.Row="0"/>
+		</Grid>
+		<Label Text="FILA8" x:Name="xErrorPass" Grid.Row="7" Grid.Column="1"
+			Style="{StaticResource EstiloLabelError}" />
+		<Grid ColumnDefinitions="1*,2*" RowDefinitions="auto" Grid.Column="1" Grid.Row="8">
+			<Label Style="{StaticResource EstiloLabelEntry}" Grid.Column="0" Grid.Row="0"
+			Text="Base de Datos:" />
+			<Entry Style="{StaticResource EstiloEntryOK}" ReturnType="Done"
+			x:Name="xBaseDatos" Placeholder="Base de Datos" Grid.Column="1" Grid.Row="0"/>
+		</Grid>
+		<Label Text="FILA10" x:Name="xErrorBase" Grid.Row="9" Grid.Column="1"
+			Style="{StaticResource EstiloLabelAvisoError}" />
+		<Button Text="Probar la Conexión" x:Name="xBotonProbar"
+			Grid.Row="10" Grid.Column="1"
+			Clicked="ProbarClick" Style="{StaticResource EstiloBotonActivo}">
+		</Button>
+
+	</Grid>
+	<!--</StackLayout>-->
+</ContentPage>

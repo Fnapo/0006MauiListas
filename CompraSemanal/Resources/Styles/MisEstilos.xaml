@@ -1,0 +1,75 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<?xaml-comp compile="true" ?>
+<ResourceDictionary 
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+
+	<Style x:Key="EstiloEntry" TargetType="Entry">
+		<Setter Property="FontAttributes" Value="Bold"/>
+		<Setter Property="BackgroundColor" Value="Azure"/>
+		<Setter Property="Margin" Value="5"/>
+		<Setter Property="FontSize" Value="Small" />
+	</Style>
+	<Style x:Key="EstiloEntryOK" TargetType="Entry" BasedOn="{StaticResource EstiloEntry}">
+		<Setter Property="TextColor" Value="Green"/>
+	</Style>
+	<Style x:Key="EstiloEntryNoOK" TargetType="Entry" BasedOn="{StaticResource EstiloEntry}">
+		<Setter Property="TextColor" Value="Red"/>
+	</Style>
+	<Style x:Key="EstiloLabel" TargetType="Label">
+		<Setter Property="FontAttributes" Value="Bold"/>
+		<Setter Property="HorizontalTextAlignment" Value="Center"/>
+		<Setter Property="VerticalTextAlignment" Value="Center"/>
+		<Setter Property="LineBreakMode" Value="WordWrap" />
+		<Setter Property="Margin" Value="5"/>
+	</Style>
+	<Style x:Key="EstiloLabelEntry" TargetType="Label" BasedOn="{StaticResource EstiloLabel}">
+		<Setter Property="TextColor" Value="Black" />
+		<Setter Property="FontSize" Value="Small" />
+	</Style>
+	<Style x:Key="EstiloLabelError" TargetType="Label" BasedOn="{StaticResource EstiloLabel}" >
+		<Setter Property="TextColor" Value="Red"/>
+		<Setter Property="BackgroundColor" Value="White"/>
+		<Setter Property="FontSize" Value="Caption" />
+	</Style>
+	<Style x:Key="EstiloLabelAviso" TargetType="Label">
+		<Setter Property="HorizontalTextAlignment" Value="Center" />
+		<Setter Property="LineBreakMode" Value="WordWrap" />
+		<Setter Property="FontAttributes" Value="Bold"/>
+		<Setter Property="BackgroundColor" Value="White"/>
+		<Setter Property="Margin" Value="5"/>
+		<Setter Property="FontSize" Value="Small" />
+		<Setter Property="Padding" Value="10" />
+	</Style>
+	<Style x:Key="EstiloLabelAvisoError" TargetType="Label" BasedOn="{StaticResource EstiloLabelAviso}">
+		<Setter Property="TextColor" Value="Red"/>
+	</Style>
+	<Style x:Key="EstiloLabelAvisoOK" TargetType="Label" BasedOn="{StaticResource EstiloLabelAviso}">
+		<Setter Property="TextColor" Value="Green"/>
+	</Style>
+	<Style x:Key="EstiloBoton" TargetType="Button">
+		<Setter Property="WidthRequest" Value="300"/>
+		<Setter Property="TextTransform" Value="Uppercase"/>
+		<Setter Property="IsEnabled" Value="True"/>
+		<Setter Property="Margin" Value="5"/>
+		<Setter Property="FontSize" Value="Small" />
+	</Style>
+	<Style x:Key="EstiloBotonActivo" TargetType="Button" BasedOn="{StaticResource EstiloBoton}">
+		<Setter Property="TextColor" Value="White"/>
+		<Setter Property="BackgroundColor" Value="Blue"/>
+	</Style>
+	<Style x:Key="EstiloBotonNoActivo" TargetType="Button" BasedOn="{StaticResource EstiloBoton}">
+		<Setter Property="TextColor" Value="Black"/>
+		<Setter Property="BackgroundColor" Value="LightGrey"/>
+		<Setter Property="IsEnabled" Value="False"/>
+	</Style>
+	<Style x:Key="EstiloBotonAvanzar" TargetType="Button" BasedOn="{StaticResource EstiloBoton}">
+		<Setter Property="TextColor" Value="White"/>
+		<Setter Property="BackgroundColor" Value="Green"/>
+	</Style>
+	<Style x:Key="EstiloBotonPeligro" TargetType="Button" BasedOn="{StaticResource EstiloBoton}">
+		<Setter Property="TextColor" Value="White"/>
+		<Setter Property="BackgroundColor" Value="DarkRed"/>
+	</Style>
+
+</ResourceDictionary>

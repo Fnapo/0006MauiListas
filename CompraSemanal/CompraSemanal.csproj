@@ -79,6 +79,9 @@
 	  <MauiXaml Update="Vistas\LeerDatos.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
+	  <MauiXaml Update="Vistas\ListaCompra.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	  <MauiXaml Update="Vistas\Probando.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>

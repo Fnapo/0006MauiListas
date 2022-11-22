@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+			xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+			x:Class="CompraSemanal.Vistas.ListaCompra"
+			BackgroundColor="CadetBlue"
+			NavigationPage.HasBackButton="False"
+			Title="Lista de la Compra">
+
+	<Grid ColumnDefinitions="*" RowDefinitions="auto,*,auto" >
+
+		<StackLayout Orientation="Horizontal" BackgroundColor="Gray" Grid.Column="0" Grid.Row="0" >
+			<Label Text="FILTRO: " HorizontalOptions="Start" Margin="5,0" VerticalTextAlignment="Center"
+			TextColor="Black"/>
+			<Button Text="filtrar" Style="{StaticResource EstiloBotonActivo}"
+			HorizontalOptions="EndAndExpand" VerticalOptions="Center" />
+		</StackLayout>
+		<StackLayout Orientation="Vertical" BackgroundColor="Cyan" Grid.Column="0" Grid.Row="1" >
+			<Label Text="Hello World" BackgroundColor="AliceBlue"/>
+		</StackLayout>
+		<StackLayout Orientation="Horizontal" BackgroundColor="Maroon" Grid.Column="0" Grid.Row="2" >
+			<Button Text="buscar producto" Style="{StaticResource EstiloBotonAvanzar}"
+			HorizontalOptions="CenterAndExpand" VerticalOptions="Center" />
+		</StackLayout>
+
+	</Grid>
+</ContentPage>

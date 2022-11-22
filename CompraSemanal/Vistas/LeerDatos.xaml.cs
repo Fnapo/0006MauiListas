@@ -1,5 +1,3 @@
-
-using ClasesMysql;
 using ClasesPryca.Modelos;
 using ClasesPryca.Modelos.Static;
 using MisEstilos;
@@ -36,9 +34,12 @@ public partial class LeerDatos : ContentPage
 	{
 		AvisosLectura lecturaCorecta = LecturaCorrecta();
 
+		Indicador.IsRunning = false;
 		BotonSalir.IsEnabled = true;
 		BotonSalir.Style = Estilos.BotonPeligro;
-		BotonCrear.Style = (lecturaCorecta==AvisosLectura.LecturaCorrecta ? Estilos.BotonAvanzar : Estilos.BotonNoActivo);
+		BotonCrear.IsEnabled = lecturaCorecta == AvisosLectura.LecturaCorrecta;
+		BotonCrear.Style = (lecturaCorecta == AvisosLectura.LecturaCorrecta ? Estilos.BotonAvanzar : Estilos.BotonNoActivo);
+		Mensaje.Style = (lecturaCorecta == AvisosLectura.LecturaCorrecta ? Estilos.AvisoOK : Estilos.AvisoError);
 		Mensaje.Text = (lecturaCorecta == AvisosLectura.LecturaCorrecta ? "Lectura Correcta ..." : "Error en la tabla de "
 			+ (lecturaCorecta == AvisosLectura.ErrorEnOfertas ? "Ofertas ..." : "Productos ..."));
 		Mensaje.IsVisible = true;
@@ -57,17 +58,14 @@ public partial class LeerDatos : ContentPage
 
 	private AvisosLectura LecturaCorrecta()
 	{
-		bool correcta = Ofertas.Count > 0;
-
-		if(!correcta)
+		if (Ofertas.Count <= 0)
 		{
 			return AvisosLectura.ErrorEnOfertas;
 		}
 		/*
-		correcta = Productos.Count > 0;
-		if(!correcta)
+		if(Productos.Count <= 0)
 		{
-			return correcta;
+			return AvisosLectura.ErrorEnProductos;
 		}
 		*/
 
@@ -79,8 +77,9 @@ public partial class LeerDatos : ContentPage
 		return true;
 	}
 
-	private void CrearLista(object sender, EventArgs e)
+	private async void CrearLista(object sender, EventArgs e)
 	{
-
+		//Mensaje.IsVisible = !Mensaje.IsVisible;
+		await Navigation.PushAsync(new ListaCompra(), true);
 	}
 }

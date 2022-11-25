@@ -56,6 +56,7 @@
 	  <ProjectReference Include="..\ClasesMysql\ClasesMysql.csproj" />
 	  <ProjectReference Include="..\ClasesPryca\ClasesPryca.csproj" />
 	  <ProjectReference Include="..\ConfiguracionGlobal\ConfiguracionGlobal.csproj" />
+	  <ProjectReference Include="..\LibreriaListaCompra\LibreriaListaCompra.csproj" />
 	  <ProjectReference Include="..\MisEstilos\MisEstilos.csproj" />
 	  <ProjectReference Include="..\Verificaciones\Verificaciones.csproj" />
 	</ItemGroup>
@@ -77,9 +78,6 @@
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Vistas\LeerDatos.xaml">
-	    <Generator>MSBuild:Compile</Generator>
-	  </MauiXaml>
-	  <MauiXaml Update="Vistas\ListaCompra.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Vistas\Probando.xaml">

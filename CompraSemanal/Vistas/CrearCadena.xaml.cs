@@ -1,4 +1,5 @@
 
+using ClasesMysql;
 using CommunityToolkit.Maui.Behaviors;
 using ConfiguracionGlobal;
 using ConfiguracionGlobal.Modelos;
@@ -188,13 +189,7 @@ public partial class CrearCadena : ContentPage
 
 	private string CadenaMysql()
 	{
-		string salida = "server=";
-
-		salida += xServidor.Text + ";port=";
-		salida += xPuerto.Text + ";uid=";
-		salida += xUsuario.Text + ";pwd=";
-		salida += xPass.Text + ";database=";
-		salida += xBaseDatos.Text + ";ssl mode=none;";
+		string salida = ConexionMysql.CrearCadenaConexion(xServidor.Text, xPuerto.Text, xUsuario.Text, xPass.Text, xBaseDatos.Text);
 
 		return salida;
 	}

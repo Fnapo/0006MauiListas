@@ -15,6 +15,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\ClasesMysql\ClasesMysql.csproj" />
     <ProjectReference Include="..\ConfiguracionGlobal\ConfiguracionGlobal.csproj" />
   </ItemGroup>
 

@@ -15,6 +15,19 @@ namespace ClasesMysql
 		private static string mensajeError = "";
 
 
+		public static string CrearCadenaConexion(string servidor, string puerto, string usuario, string password, string baseDatos)
+		{
+			string salida = "server=";			
+
+			salida += servidor + ";port=";
+			salida += puerto + ";uid=";
+			salida += usuario + ";pwd=";
+			salida += password + ";database=";
+			salida += baseDatos + ";";//ssl mode=none;";
+
+			return salida;
+		}
+
 		public static void CrearConexion(string cadenaConexion)
 		{
 			mensajeError = "Conexión correcta.";

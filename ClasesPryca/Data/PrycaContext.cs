@@ -1,4 +1,5 @@
 ﻿using System;
+using ClasesMysql;
 using ClasesPryca.Modelos;
 using ConfiguracionGlobal;
 using ConfiguracionGlobal.Modelos;
@@ -25,16 +26,10 @@ namespace ClasesPryca.Data
         {
             if (!optionsBuilder.IsConfigured)
             {
-				string salida = "server=";
 				Opciones opciones = ConfiguracionLocal.VerOpciones();
+                string cadenaConexion = ConexionMysql.CrearCadenaConexion(opciones.Servidor, opciones.Puerto, opciones.Usuario, opciones.Password, opciones.BaseDatos);
 
-				salida += opciones.Servidor + ";port=";
-				salida += opciones.Puerto + ";uid=";
-				salida += opciones.Usuario + ";pwd=";
-				salida += opciones.Password + ";database=";
-                salida += opciones.BaseDatos + ";ssl mode=none;";
-
-				optionsBuilder.UseMySql(salida, ServerVersion.AutoDetect(salida));
+				optionsBuilder.UseMySql(cadenaConexion, ServerVersion.AutoDetect(cadenaConexion));
             }
         }
         

@@ -1,4 +1,4 @@
-namespace CompraSemanal.Vistas;
+namespace LibreriaListaCompra.Vistas;
 
 public partial class ListaCompra : ContentPage
 {

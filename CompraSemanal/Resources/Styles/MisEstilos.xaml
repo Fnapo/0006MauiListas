@@ -49,7 +49,7 @@
 		<Setter Property="TextColor" Value="Green"/>
 	</Style>
 	<Style x:Key="EstiloBoton" TargetType="Button">
-		<Setter Property="MinimumWidthRequest" Value="200"/>
+		<Setter Property="WidthRequest" Value="200"/>
 		<Setter Property="TextTransform" Value="Uppercase"/>
 		<Setter Property="IsEnabled" Value="True"/>
 		<Setter Property="Padding" Value="20,5"/>

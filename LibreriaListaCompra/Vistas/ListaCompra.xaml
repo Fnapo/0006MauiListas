@@ -14,8 +14,23 @@
 			<Button Text="filtrar" Style="{StaticResource EstiloBotonActivo}"
 			HorizontalOptions="EndAndExpand" VerticalOptions="Center" />
 		</StackLayout>
-		<StackLayout Orientation="Vertical" BackgroundColor="Cyan" Grid.Column="0" Grid.Row="1" >
-			<Label Text="Hello World" BackgroundColor="AliceBlue"/>
+		<StackLayout Orientation="Vertical" BackgroundColor="Azure" Grid.Column="0" Grid.Row="1" Spacing="5" >
+			<Label x:Name="labelElegido" Text="111" HorizontalOptions="CenterAndExpand" />
+			<ListView x:Name="vistaLista" ItemsSource="{Binding ListaCompraPryca}"
+			ItemSelected="ItemElegido" >
+				<ListView.ItemTemplate>
+					<DataTemplate>
+						<ViewCell>
+							<Border Padding="5" Margin="5">
+								<Grid ColumnDefinitions="auto" RowDefinitions="auto,auto" Margin="5">
+									<Label Grid.Column="0" Grid.Row="0" Text="{Binding Descripcion}"/>
+									<Label Grid.Column="0" Grid.Row="1" Text="{Binding TextoOferta}"/>
+								</Grid>
+							</Border>
+						</ViewCell>
+					</DataTemplate>
+				</ListView.ItemTemplate>
+			</ListView>
 		</StackLayout>
 		<StackLayout Orientation="Horizontal" BackgroundColor="Maroon" Grid.Column="0" Grid.Row="2" >
 			<Button Text="buscar producto" Style="{StaticResource EstiloBotonAvanzar}"

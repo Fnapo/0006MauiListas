@@ -26,5 +26,11 @@ namespace LibreriaListaCompra.VistaModelo
 				ListaCompraPryca.Add(articulo);
 			}
 		}
+
+		public void BorrarItem()
+		{
+			ListaCompraPryca.RemoveAt(IndiceSeleccionado);
+			IndiceSeleccionado = -1;
+		}
 	}
 }

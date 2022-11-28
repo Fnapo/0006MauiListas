@@ -1,7 +1,7 @@
 
-using LibreriaListaCompra.Vistas;
 using ClasesPryca.Modelos;
 using ClasesPryca.Modelos.Static;
+using LibreriaListaCompra.Vistas;
 using MisEstilos;
 
 namespace CompraSemanal.Vistas;
@@ -32,21 +32,6 @@ public partial class LeerDatos : ContentPage
 		BotonSalir.IsEnabled = BotonCrear.IsEnabled = false;
 	}
 
-	private void BotonesFinal()
-	{
-		AvisosLectura lecturaCorecta = LecturaCorrecta();
-
-		Indicador.IsRunning = false;
-		BotonSalir.IsEnabled = true;
-		BotonSalir.Style = Estilos.BotonPeligro;
-		BotonCrear.IsEnabled = lecturaCorecta == AvisosLectura.LecturaCorrecta;
-		BotonCrear.Style = (lecturaCorecta == AvisosLectura.LecturaCorrecta ? Estilos.BotonAvanzar : Estilos.BotonNoActivo);
-		Mensaje.Style = (lecturaCorecta == AvisosLectura.LecturaCorrecta ? Estilos.AvisoOK : Estilos.AvisoError);
-		Mensaje.Text = (lecturaCorecta == AvisosLectura.LecturaCorrecta ? "Lectura Correcta ..." : "Error en la tabla de "
-			+ (lecturaCorecta == AvisosLectura.ErrorEnOfertas ? "Ofertas ..." : "Productos ..."));
-		Mensaje.IsVisible = true;
-	}
-
 	private void Salir(object sender, EventArgs e)
 	{
 		Environment.Exit(1);
@@ -54,8 +39,30 @@ public partial class LeerDatos : ContentPage
 
 	private async void LeerDatosArticulos()
 	{
-		Ofertas = await Task.Run(() => DBPryca.Contexto.Oferta.Where(o => o.Idoferta == 1).ToList());
-		BotonesFinal();
+		AvisosLectura lecturaCorecta;
+
+		Ofertas = await Task.Run(() => DBPryca.Contexto.Oferta.ToList());
+		Productos = await Task.Run(() => DBPryca.Contexto.Producto.ToList());
+		lecturaCorecta = LecturaCorrecta();
+		BotonesFinal(lecturaCorecta);
+		RellenarMensaje(lecturaCorecta);
+	}
+
+	private void BotonesFinal(AvisosLectura lecturaCorecta)
+	{
+		Indicador.IsRunning = false;
+		BotonSalir.IsEnabled = true;
+		BotonSalir.Style = Estilos.BotonPeligro;
+		BotonCrear.IsEnabled = lecturaCorecta == AvisosLectura.LecturaCorrecta;
+		BotonCrear.Style = (lecturaCorecta == AvisosLectura.LecturaCorrecta ? Estilos.BotonAvanzar : Estilos.BotonNoActivo);
+	}
+
+	private void RellenarMensaje(AvisosLectura lecturaCorecta)
+	{
+		Mensaje.Style = (lecturaCorecta == AvisosLectura.LecturaCorrecta ? Estilos.AvisoOK : Estilos.AvisoError);
+		Mensaje.Text = (lecturaCorecta == AvisosLectura.LecturaCorrecta ? "Lectura Correcta ..." : "Error en la tabla de "
+			+ (lecturaCorecta == AvisosLectura.ErrorEnOfertas ? "Ofertas ..." : "Productos ..."));
+		Mensaje.IsVisible = true;
 	}
 
 	private AvisosLectura LecturaCorrecta()
@@ -64,12 +71,10 @@ public partial class LeerDatos : ContentPage
 		{
 			return AvisosLectura.ErrorEnOfertas;
 		}
-		/*
-		if(Productos.Count <= 0)
+		if (Productos.Count <= 0)
 		{
 			return AvisosLectura.ErrorEnProductos;
 		}
-		*/
 
 		return AvisosLectura.LecturaCorrecta;
 	}

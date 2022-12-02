@@ -15,9 +15,6 @@ public partial class LeerDatos : ContentPage
 		ErrorEnProductos
 	}
 
-	public static List<Oferta> Ofertas { get; private set; } = new List<Oferta>();
-	public static List<Producto> Productos { get; private set; } = new List<Producto>();
-
 	public LeerDatos()
 	{
 		InitializeComponent();
@@ -41,9 +38,13 @@ public partial class LeerDatos : ContentPage
 	{
 		AvisosLectura lecturaCorecta;
 
-		Ofertas = await Task.Run(() => DBPryca.Contexto.Oferta.ToList());
-		Productos = await Task.Run(() => DBPryca.Contexto.Producto.ToList());
+		DBPryca.Ofertas = await Task.Run(() => DBPryca.Contexto.Oferta.ToList());
+		DBPryca.Productos = await Task.Run(() => DBPryca.Contexto.Producto.ToList());
 		lecturaCorecta = LecturaCorrecta();
+		if(lecturaCorecta == AvisosLectura.LecturaCorrecta)
+		{
+			ComprarArticulo.RellenarListaProductosMostrados(DBPryca.Productos, DBPryca.Ofertas);
+		}
 		BotonesFinal(lecturaCorecta);
 		RellenarMensaje(lecturaCorecta);
 	}
@@ -67,11 +68,11 @@ public partial class LeerDatos : ContentPage
 
 	private AvisosLectura LecturaCorrecta()
 	{
-		if (Ofertas.Count <= 0)
+		if (DBPryca.Ofertas.Count <= 0)
 		{
 			return AvisosLectura.ErrorEnOfertas;
 		}
-		if (Productos.Count <= 0)
+		if (DBPryca.Productos.Count <= 0)
 		{
 			return AvisosLectura.ErrorEnProductos;
 		}

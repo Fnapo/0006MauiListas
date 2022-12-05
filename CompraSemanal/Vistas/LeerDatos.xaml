@@ -3,14 +3,15 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="CompraSemanal.Vistas.LeerDatos"
 			 NavigationPage.HasBackButton="False"
+			 BackgroundColor="LightGray"
              Title="Leyendo los Datos">
 
-	<Grid ColumnDefinitions="*" RowDefinitions="*,*" BackgroundColor="CadetBlue">
+	<Grid ColumnDefinitions="*" RowDefinitions="*,*" >
 		<VerticalStackLayout VerticalOptions="Center" Spacing="5">
-			<Button x:Name="BotonCrear" Text="crear lista" Clicked="CrearLista"
-			Style="{StaticResource EstiloBotonNoActivo}" />
-			<Button x:Name="BotonSalir" Text="salir" Clicked="Salir"
-			Style="{StaticResource EstiloBotonNoActivo}" />
+			<Button x:Name="botonCrear" Text="crear lista" Clicked="CrearLista" IsEnabled="False"
+				Style="{StaticResource EstiloBotonNoActivo}" HorizontalOptions="CenterAndExpand" />
+			<Button x:Name="botonSalir" Text="salir" Clicked="Salir" IsEnabled="False"
+				Style="{StaticResource EstiloBotonNoActivo}" HorizontalOptions="CenterAndExpand" />
 		</VerticalStackLayout>
 		<ActivityIndicator x:Name="Indicador" Color="White" IsRunning="False" Grid.Row="1" />
 		<Label x:Name="Mensaje" Text="Leyendo" FontSize="Small" Grid.Row="1" 

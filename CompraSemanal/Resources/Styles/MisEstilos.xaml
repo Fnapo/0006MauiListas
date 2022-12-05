@@ -8,7 +8,7 @@
 		<Setter Property="FontAttributes" Value="Bold"/>
 		<Setter Property="BackgroundColor" Value="Azure"/>
 		<Setter Property="Margin" Value="5"/>
-		<Setter Property="FontSize" Value="Small" />
+		<!--<Setter Property="FontSize" Value="Caption" />-->
 	</Style>
 	<Style x:Key="EstiloEntryOK" TargetType="Entry" BasedOn="{StaticResource EstiloEntry}">
 		<Setter Property="TextColor" Value="Green"/>
@@ -25,7 +25,7 @@
 	</Style>
 	<Style x:Key="EstiloLabelEntry" TargetType="Label" BasedOn="{StaticResource EstiloLabel}">
 		<Setter Property="TextColor" Value="Black" />
-		<Setter Property="FontSize" Value="Small" />
+		<!--<Setter Property="FontSize" Value="Caption" />-->
 	</Style>
 	<Style x:Key="EstiloLabelError" TargetType="Label" BasedOn="{StaticResource EstiloLabel}" >
 		<Setter Property="TextColor" Value="Red"/>
@@ -49,22 +49,21 @@
 		<Setter Property="TextColor" Value="Green"/>
 	</Style>
 	<Style x:Key="EstiloBoton" TargetType="Button">
-		<Setter Property="WidthRequest" Value="200"/>
+		<!--<Setter Property="WidthRequest" Value="150"/>
+		<Setter Property="LineBreakMode" Value="WordWrap" />
+		<Setter Property="FontSize" Value="Caption" />-->
 		<Setter Property="TextTransform" Value="Uppercase"/>
-		<Setter Property="IsEnabled" Value="True"/>
 		<Setter Property="Padding" Value="20,5"/>
 		<Setter Property="Margin" Value="5"/>
 		<Setter Property="FontAttributes" Value="Bold"/>
-		<Setter Property="FontSize" Value="Body" />
 	</Style>
 	<Style x:Key="EstiloBotonActivo" TargetType="Button" BasedOn="{StaticResource EstiloBoton}">
 		<Setter Property="TextColor" Value="White"/>
 		<Setter Property="BackgroundColor" Value="Blue"/>
 	</Style>
 	<Style x:Key="EstiloBotonNoActivo" TargetType="Button" BasedOn="{StaticResource EstiloBoton}">
-		<Setter Property="TextColor" Value="Black"/>
-		<Setter Property="BackgroundColor" Value="LightGrey"/>
-		<Setter Property="IsEnabled" Value="False"/>
+		<Setter Property="TextColor" Value="White"/>
+		<Setter Property="BackgroundColor" Value="Gray"/>
 	</Style>
 	<Style x:Key="EstiloBotonAvanzar" TargetType="Button" BasedOn="{StaticResource EstiloBoton}">
 		<Setter Property="TextColor" Value="White"/>

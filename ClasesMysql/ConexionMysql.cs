@@ -23,7 +23,7 @@ namespace ClasesMysql
 			salida += puerto + ";uid=";
 			salida += usuario + ";pwd=";
 			salida += password + ";database=";
-			salida += baseDatos + ";";//ssl mode=none;";
+			salida += baseDatos + ";ssl mode=none;";
 
 			return salida;
 		}

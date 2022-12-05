@@ -22,6 +22,7 @@ public partial class CrearCadena : ContentPage
 	{
 		InitializeComponent();
 
+		PrepararBotones();
 		//CrearConfiguracion();
 		//LeerConfiguracion();
 		OcultarErrores();
@@ -30,6 +31,11 @@ public partial class CrearCadena : ContentPage
 		//AsignarEstilos();
 		CrearBehaviors();
 		CicloEntradas();
+	}
+
+	private void PrepararBotones()
+	{
+		EstilosBotones.BotonLargo(xBotonProbar);
 	}
 
 	private void OcultarErrores()
@@ -98,7 +104,6 @@ public partial class CrearCadena : ContentPage
 		BehaviorsEntry(xUsuario, VerificarUsuario);
 		BehaviorsEntry(xPass, VerificarPassword);
 		BehaviorsEntry(xBaseDatos, VerificarBaseDatos);
-		//xServidor.Behaviors.Add(noEspacios);
 	}
 
 	private static void BehaviorsEntry(Entry entrada, Action accion)

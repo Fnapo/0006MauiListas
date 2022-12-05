@@ -1,46 +1,52 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="LibreriaListaCompra.Vistas.ComprarArticulo"
+			 xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+			 x:Class="LibreriaListaCompra.Vistas.ComprarArticulo"
 			 x:Name="MiCompra"
-             NavigationPage.HasBackButton="False"
-             Title="Comprar un Articulo">
+			 NavigationPage.HasBackButton="False"
+			 BackgroundColor="LightGray"
+			 Title="Comprar un Articulo">
 
-	<Grid ColumnDefinitions="*" RowDefinitions="auto,*,auto" >
+	<Grid ColumnDefinitions="*" RowDefinitions="auto,auto,*,auto" >
 
-		<StackLayout Orientation="Horizontal" BackgroundColor="Gray" Grid.Column="0" Grid.Row="0" >
+		<StackLayout Orientation="Horizontal" Grid.Column="0" Grid.Row="0" >
 			<Label Text="FILTRO: " HorizontalOptions="Start" Margin="5,0" VerticalTextAlignment="Center"
 				TextColor="Black"/>
-			<Button Text="filtrar" Style="{StaticResource EstiloBotonActivo}"
+			<Button Text="filtrar" Style="{StaticResource EstiloBotonActivo}" x:Name="botonFiltrar"
 				HorizontalOptions="EndAndExpand" VerticalOptions="Center" />
 		</StackLayout>
-		<StackLayout Orientation="Vertical" BackgroundColor="Azure" Grid.Column="0" Grid.Row="1" Spacing="5" >
-			<Label x:Name="labelElegido" Text="111" HorizontalOptions="CenterAndExpand" />
-			<ListView x:Name="vistaLista" ItemsSource="{Binding Source={x:Reference MiCompra}, Path=ListaProductos}"                  
-				ItemSelected="ItemElegido" >
-				<ListView.ItemTemplate>
-					<DataTemplate>
-						<ViewCell>
-							<Frame BorderColor="DarkViolet" CornerRadius="5" Margin="20,5" Padding="10" >
-								<Grid ColumnDefinitions="1*,4*" RowDefinitions="auto,auto" Margin="1" >
-									<Label Grid.Column="0" Grid.Row="0" Text="{Binding IDArticulo}"/>
-									<Label Grid.Column="1" Grid.Row="0" Text="{Binding Descripcion}"/>
-									<Label Grid.Column="0" Grid.Row="1" Text="{Binding Oferta}"/>
-									<Label Grid.Column="1" Grid.Row="1" Text="{Binding TextoOferta}"/>
-								</Grid>
-							</Frame>
-						</ViewCell>
-					</DataTemplate>
-				</ListView.ItemTemplate>
-			</ListView>
-		</StackLayout>
-		<StackLayout Orientation="Horizontal" BackgroundColor="Yellow" Grid.Column="0" Grid.Row="2" >
+		<!--<StackLayout Orientation="Vertical" BackgroundColor="Azure" Grid.Column="0" Grid.Row="1" Spacing="5" >-->
+		<Label x:Name="labelElegido" Text="111" HorizontalOptions="CenterAndExpand" 
+			Grid.Column="0" Grid.Row="1" />
+		<ListView x:Name="vistaLista" ItemsSource="{Binding Source={x:Reference MiCompra}, 
+				Path=ListaArticulosMostrados}" ItemSelected="ItemElegido"
+				Grid.Column="0" Grid.Row="2"
+				HasUnevenRows="True" VerticalOptions="FillAndExpand" >
+			<ListView.ItemTemplate>
+				<DataTemplate>
+					<ViewCell>
+						<!--<Frame BorderColor="DarkViolet" CornerRadius="5" Padding="20,5" Margin="0,5"
+								VerticalOptions="End" >-->
+						<Grid ColumnDefinitions="1*,4*" RowDefinitions="auto,auto" Margin="5" 
+						BackgroundColor="Azure" >
+							<Label Grid.Column="0" Grid.Row="0" Text="{Binding IDArticulo}" />
+							<Label Grid.Column="1" Grid.Row="0" Text="{Binding Descripcion}" />
+							<Label Grid.Column="0" Grid.Row="1" Text="{Binding Oferta}" />
+							<Label Grid.Column="1" Grid.Row="1" Text="{Binding TextoOferta}" />
+						</Grid>
+						<!--</Frame>-->
+					</ViewCell>
+				</DataTemplate>
+			</ListView.ItemTemplate>
+		</ListView>
+		<!--</StackLayout>-->
+		<StackLayout Orientation="Horizontal" Grid.Column="0" Grid.Row="3" >
 			<Button Text="elegir producto" Style="{StaticResource EstiloBotonAvanzar}"
 				HorizontalOptions="CenterAndExpand" VerticalOptions="Center" 
-				Clicked="ElegirProducto" />
+				Clicked="ElegirProducto" x:Name="botonElegir" />
 			<Button Text="cancelar" Style="{StaticResource EstiloBotonPeligro}"
 				HorizontalOptions="CenterAndExpand" VerticalOptions="Center" 
-				Clicked="Cancelar"/>
+				Clicked="Cancelar" x:Name="botonCancelar" />
 		</StackLayout>
 
 	</Grid>

@@ -2,6 +2,7 @@
 using ClasesPryca.Modelos;
 using ClasesPryca.Modelos.Static;
 using LibreriaListaCompra.Modelos;
+using MisEstilos;
 
 namespace LibreriaListaCompra.Vistas;
 
@@ -20,13 +21,26 @@ public partial class ComprarArticulo : ContentPage
 		InitializeComponent();
 
 		indiceElegido = -1;
+		PrepararBotones();
+	}
+
+	private void PrepararBotones()
+	{
+		EstilosBotones.BotonCorto(botonFiltrar);
+		EstilosBotones.BotonCorto(botonElegir);
+		EstilosBotones.BotonCorto(botonCancelar);
 	}
 
 	protected override void OnAppearing()
 	{
 		base.OnAppearing();
 
-		NuevoArticulo = null;
+		NuevoArticulo = CrearArticuloComprado.ArticuloFinal;
+		if (NuevoArticulo != null)
+		{
+			CrearArticuloComprado.ArticuloFinal = null;
+			Navigation.PopAsync(true);
+		}
 	}
 
 	public static void RellenarListaProductosMostrados(List<Producto> productos, List<Oferta> ofertas)
@@ -58,12 +72,20 @@ public partial class ComprarArticulo : ContentPage
 		{
 			ArticuloMostrado articulo = ListaArticulosMostrados[indiceElegido];
 			Producto producto = DBPryca.Productos.Find(p => p.Idproducto == articulo.IDArticulo);
+			//*
 			double precio = (string.Compare(producto.TipoPrecio, DBPryca.TipoPrecioVariable, true) == 0 ? 2.14 : (double)producto.Precio);
 			int unidades = (string.Compare(producto.TipoPrecio, DBPryca.TipoPrecioVariable, true) == 0 ? 1 : 2);
 
 			NuevoArticulo = new ArticuloComprado(0, precio, producto.Descripcion, producto.TipoPrecio, producto.CantidadLote, unidades, producto.FkOferta, articulo.TextoOferta);
 
 			Navigation.PopAsync(true);
+			//*/
+			//Navigation.PushAsync(new CrearArticuloComprado(articulo, producto), true);
 		}
+	}
+
+	protected override bool OnBackButtonPressed()
+	{
+		return true;
 	}
 }

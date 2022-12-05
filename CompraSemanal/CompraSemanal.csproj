@@ -49,6 +49,18 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <Compile Remove="Vistas\ErrorConexion.xaml.cs" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <MauiXaml Remove="Vistas\ErrorConexion.xaml" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <None Remove="Vistas\CrearCadena.xaml~RFaa5ccde.TMP" />
+	</ItemGroup>
+
+	<ItemGroup>
 	  <PackageReference Include="CommunityToolkit.Maui" Version="2.0.0" />
 	</ItemGroup>
 
@@ -72,9 +84,6 @@
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Vistas\CrearCadena.xaml">
-	    <Generator>MSBuild:Compile</Generator>
-	  </MauiXaml>
-	  <MauiXaml Update="Vistas\ErrorConexion.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Vistas\LeerDatos.xaml">

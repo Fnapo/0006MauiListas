@@ -1,6 +1,7 @@
 
 using LibreriaListaCompra.Modelos;
 using LibreriaListaCompra.VistaModelo;
+using MisEstilos;
 
 namespace LibreriaListaCompra.Vistas;
 
@@ -15,11 +16,21 @@ public partial class ListaCompra : ContentPage
 	{
 		ListaCompraPryca = comprados.ListaCompraPryca;
 		nuevoArticulo = null;
+
 		InitializeComponent();
+
 		vistaLista.SelectedItem = null;
+		PrepararBotones();
 
 		//AsignarTexto();
 		//vistaLista.BindingContext = comprados;
+	}
+
+	private void PrepararBotones()
+	{
+		EstilosBotones.BotonCorto(botonFiltrar);
+		EstilosBotones.BotonCorto(botonComprar);
+		EstilosBotones.BotonCorto(botonBorrar);
 	}
 
 	protected override void OnAppearing()
@@ -66,7 +77,9 @@ public partial class ListaCompra : ContentPage
 			return 0;
 		}
 
-		return ListaCompraPryca[ListaCompraPryca.Count - 1].IDArticulo + 1;
+		int salida = ListaCompraPryca.Max(a => a.IDArticulo) + 1;
+
+		return salida;
 	}
 
 	private void ItemElegido(object sender, SelectedItemChangedEventArgs e)
@@ -102,5 +115,10 @@ public partial class ListaCompra : ContentPage
 	private async void AbrirComprarArticulo(object sender, EventArgs e)
 	{
 		await Navigation.PushAsync(new ComprarArticulo(), true);
+	}
+
+	protected override bool OnBackButtonPressed()
+	{
+		return true;
 	}
 }

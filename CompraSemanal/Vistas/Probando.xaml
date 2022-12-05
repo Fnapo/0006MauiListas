@@ -3,20 +3,24 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="CompraSemanal.Vistas.Probando"
 			 NavigationPage.HasBackButton="False"
+			 BackgroundColor="LightGrey"
              Title="Probando la Conexión">
 
-	<Grid ColumnDefinitions="*" RowDefinitions="*,*" BackgroundColor="CadetBlue">
+	<Grid ColumnDefinitions="*" RowDefinitions="*,*" >
 		<VerticalStackLayout VerticalOptions="Center" Spacing="5">
-			<Button x:Name="BotonVolver" Text="reconfigurar" Style="{StaticResource EstiloBotonNoActivo}"
-			IsEnabled="False" Clicked="Volver"/>
-			<Button x:Name="BotonLeer" Text="leer los datos" Style="{StaticResource EstiloBotonNoActivo}"
-			IsEnabled="False" Clicked="LecturaDatos" />
-			<Button x:Name="BotonSalir" Text="salir" Style="{StaticResource EstiloBotonNoActivo}"
-			IsEnabled="False" Clicked="Salir"/>
+			<Button x:Name="BotonVolver" Text="reconfigurar" IsEnabled="False"
+			Style="{StaticResource EstiloBotonNoActivo}"
+			Clicked="Volver" HorizontalOptions="CenterAndExpand" />
+			<Button x:Name="BotonLeer" Text="leer los datos" IsEnabled="False"
+			Style="{StaticResource EstiloBotonNoActivo}"
+			Clicked="LecturaDatos" HorizontalOptions="CenterAndExpand" />
+			<Button x:Name="BotonSalir" Text="salir" IsEnabled="False"
+			Style="{StaticResource EstiloBotonNoActivo}"
+			Clicked="Salir" HorizontalOptions="CenterAndExpand" />
 		</VerticalStackLayout>
 		<ActivityIndicator x:Name="Indicador" Color="White" IsRunning="False" Grid.Row="1" />
-		<Label x:Name="Mensaje" Text="Probando" Grid.Row="1" 
-		IsVisible="False" VerticalOptions="CenterAndExpand" Style="{StaticResource EstiloLabelAvisoError}" />
+		<Label x:Name="Mensaje" Text="Probando" Grid.Row="1" IsVisible="False"
+			VerticalOptions="CenterAndExpand" Style="{StaticResource EstiloLabelAvisoError}" />
 	</Grid>
 
 </ContentPage>

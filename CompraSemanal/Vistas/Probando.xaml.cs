@@ -22,6 +22,9 @@ public partial class Probando : ContentPage
 	{
 		Mensaje.IsVisible = false;
 		Indicador.IsRunning = true;
+		EstilosBotones.BotonLargo(BotonLeer);
+		EstilosBotones.BotonLargo(BotonSalir);
+		EstilosBotones.BotonLargo(BotonVolver);
 	}
 
 	private async void Volver(object sender, EventArgs e)

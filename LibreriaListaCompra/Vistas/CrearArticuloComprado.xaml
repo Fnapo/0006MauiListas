@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             NavigationPage.HasBackButton="False"
+             x:Class="LibreriaListaCompra.Vistas.CrearArticuloComprado"
+			 x:Name="CrearCompra"
+			 BackgroundColor="LightGray"
+             Title="Crear Un Articulo Comprado">
+
+	<Grid x:Name="GridCrear" ColumnDefinitions="4*,14*,28*,4*"
+		RowDefinitions="auto,auto,auto,20,auto" VerticalOptions="Center" >
+
+		<Label Style="{StaticResource EstiloLabelEntry}" Grid.Column="1" Grid.Row="0"
+				Text="Descripción:" />
+		<Label Style="{StaticResource EstiloLabelEntry}" Grid.Column="2" Grid.Row="0"
+				Text="{Binding Source={x:Reference CrearCompra}, Path=ArticuloFuente.Descripcion}" />
+
+		<Label Style="{StaticResource EstiloLabelEntry}" Grid.Column="1" Grid.Row="1"
+				Text="Oferta:" />
+		<Label Style="{StaticResource EstiloLabelEntry}" Grid.Column="2" Grid.Row="1"
+				Text="{Binding Source={x:Reference CrearCompra}, Path=ArticuloFuente.TextoOferta}" />
+
+		<Label Style="{StaticResource EstiloLabelEntry}" Grid.Column="1" Grid.Row="2"
+				Text="Tipo de Precio:" />
+		<Label Style="{StaticResource EstiloLabelEntry}" Grid.Column="2" Grid.Row="2"
+				Text="{Binding Source={x:Reference CrearCompra}, Path=ProductoFuente.TipoPrecio}" />
+
+		<StackLayout Orientation="Horizontal" Grid.Column="1" Grid.Row="4"
+				Grid.ColumnSpan="2">
+			<Button Text="crear producto" Style="{StaticResource EstiloBotonAvanzar}"
+					HorizontalOptions="CenterAndExpand" VerticalOptions="Center" 
+					x:Name="botonCrear" />
+			<Button Text="cancelar" Style="{StaticResource EstiloBotonPeligro}"
+					HorizontalOptions="CenterAndExpand" VerticalOptions="Center" 
+					Clicked="Cancelar" x:Name="botonCancelar" />
+		</StackLayout>
+
+	</Grid>
+
+</ContentPage>

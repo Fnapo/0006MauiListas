@@ -28,9 +28,9 @@ public partial class ListaCompra : ContentPage
 
 	private void PrepararBotones()
 	{
-		EstilosBotones.BotonCorto(botonFiltrar);
-		EstilosBotones.BotonCorto(botonComprar);
-		EstilosBotones.BotonCorto(botonBorrar);
+		TiposBotones.BotonCorto(botonFiltrar);
+		TiposBotones.BotonCorto(botonComprar);
+		TiposBotones.BotonCorto(botonBorrar);
 	}
 
 	protected override void OnAppearing()
@@ -85,6 +85,7 @@ public partial class ListaCompra : ContentPage
 	private void ItemElegido(object sender, SelectedItemChangedEventArgs e)
 	{
 		indiceElegido = e.SelectedItemIndex;
+		botonBorrar.IsEnabled = (indiceElegido > -1);
 		AsignarTexto();
 	}
 

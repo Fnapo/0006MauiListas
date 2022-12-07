@@ -1,7 +1,6 @@
 ﻿namespace MisEstilos
 {
-	public static class EstilosBotones
-
+	public static class TiposBotones
 	{
 		public static void BotonLargo(Button boton)
 		{

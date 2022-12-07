@@ -45,7 +45,7 @@
 				HorizontalOptions="CenterAndExpand" VerticalOptions="Center"
 				Clicked="AbrirComprarArticulo" x:Name="botonComprar" />
 			<Button Text="borrar ítem" Style="{StaticResource EstiloBotonPeligro}"
-				HorizontalOptions="CenterAndExpand" VerticalOptions="Center" 
+				HorizontalOptions="CenterAndExpand" VerticalOptions="Center" IsEnabled="False"
 				Clicked="BorrarItem" x:Name="botonBorrar" />
 		</StackLayout>
 

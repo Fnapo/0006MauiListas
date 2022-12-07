@@ -35,7 +35,7 @@ public partial class CrearCadena : ContentPage
 
 	private void PrepararBotones()
 	{
-		EstilosBotones.BotonLargo(xBotonProbar);
+		TiposBotones.BotonLargo(xBotonProbar);
 	}
 
 	private void OcultarErrores()
@@ -122,7 +122,7 @@ public partial class CrearCadena : ContentPage
 		bool valido= VerificacionGlobal();
 
 		xBotonProbar.IsEnabled = valido;
-		xBotonProbar.Style = (valido ? Estilos.BotonActivo : Estilos.BotonNoActivo);
+		//xBotonProbar.Style = (valido ? Estilos.BotonActivo : Estilos.BotonNoActivo);
 	}
 
 	private bool VerificacionGlobal()

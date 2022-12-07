@@ -23,8 +23,8 @@ public partial class CrearArticuloComprado : ContentPage
 
 	private void PrepararBotones()
 	{
-		EstilosBotones.BotonCorto(botonCrear);
-		EstilosBotones.BotonCorto(botonCancelar);
+		TiposBotones.BotonCorto(botonCrear);
+		TiposBotones.BotonCorto(botonCancelar);
 	}
 
 	protected override void OnAppearing()

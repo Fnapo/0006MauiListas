@@ -22,9 +22,9 @@ public partial class Probando : ContentPage
 	{
 		Mensaje.IsVisible = false;
 		Indicador.IsRunning = true;
-		EstilosBotones.BotonLargo(BotonLeer);
-		EstilosBotones.BotonLargo(BotonSalir);
-		EstilosBotones.BotonLargo(BotonVolver);
+		TiposBotones.BotonLargo(BotonLeer);
+		TiposBotones.BotonLargo(BotonSalir);
+		TiposBotones.BotonLargo(BotonVolver);
 	}
 
 	private async void Volver(object sender, EventArgs e)
@@ -54,9 +54,9 @@ public partial class Probando : ContentPage
 		BotonVolver.IsEnabled = true;
 		BotonSalir.IsEnabled = true;
 		BotonLeer.IsEnabled = (ConexionMysql.Conexion != null);
-		BotonSalir.Style = Estilos.BotonPeligro;
-		BotonVolver.Style = Estilos.BotonActivo;
-		BotonLeer.Style = (BotonLeer.IsEnabled ? Estilos.BotonAvanzar : Estilos.BotonNoActivo);
+		//BotonSalir.Style = Estilos.BotonPeligro;
+		//BotonVolver.Style = Estilos.BotonActivo;
+		//BotonLeer.Style = (BotonLeer.IsEnabled ? Estilos.BotonAvanzar : Estilos.BotonNoActivo);
 	}
 
 	/*

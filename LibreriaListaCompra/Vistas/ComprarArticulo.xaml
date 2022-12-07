@@ -42,7 +42,7 @@
 		<!--</StackLayout>-->
 		<StackLayout Orientation="Horizontal" Grid.Column="0" Grid.Row="3" >
 			<Button Text="elegir producto" Style="{StaticResource EstiloBotonAvanzar}"
-				HorizontalOptions="CenterAndExpand" VerticalOptions="Center" 
+				HorizontalOptions="CenterAndExpand" VerticalOptions="Center" IsEnabled="False"
 				Clicked="ElegirProducto" x:Name="botonElegir" />
 			<Button Text="cancelar" Style="{StaticResource EstiloBotonPeligro}"
 				HorizontalOptions="CenterAndExpand" VerticalOptions="Center" 

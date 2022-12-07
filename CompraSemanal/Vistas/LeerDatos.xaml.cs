@@ -27,8 +27,8 @@ public partial class LeerDatos : ContentPage
 	private void BotonesInicio()
 	{
 		botonSalir.IsEnabled = botonCrear.IsEnabled = false;
-		EstilosBotones.BotonLargo(botonCrear);
-		EstilosBotones.BotonLargo(botonSalir);
+		TiposBotones.BotonLargo(botonCrear);
+		TiposBotones.BotonLargo(botonSalir);
 	}
 
 	private void Salir(object sender, EventArgs e)
@@ -55,9 +55,9 @@ public partial class LeerDatos : ContentPage
 	{
 		Indicador.IsRunning = false;
 		botonSalir.IsEnabled = true;
-		botonSalir.Style = Estilos.BotonPeligro;
+		//botonSalir.Style = Estilos.BotonPeligro;
 		botonCrear.IsEnabled = lecturaCorecta == AvisosLectura.LecturaCorrecta;
-		botonCrear.Style = (lecturaCorecta == AvisosLectura.LecturaCorrecta ? Estilos.BotonAvanzar : Estilos.BotonNoActivo);
+		//botonCrear.Style = (lecturaCorecta == AvisosLectura.LecturaCorrecta ? Estilos.BotonAvanzar : Estilos.BotonNoActivo);
 	}
 
 	private void RellenarMensaje(AvisosLectura lecturaCorecta)

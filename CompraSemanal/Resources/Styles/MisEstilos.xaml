@@ -56,22 +56,92 @@
 		<Setter Property="Padding" Value="20,5"/>
 		<Setter Property="Margin" Value="5"/>
 		<Setter Property="FontAttributes" Value="Bold"/>
+		<Setter Property="TextColor" Value="White"/>
 	</Style>
 	<Style x:Key="EstiloBotonActivo" TargetType="Button" BasedOn="{StaticResource EstiloBoton}">
-		<Setter Property="TextColor" Value="White"/>
-		<Setter Property="BackgroundColor" Value="Blue"/>
+		<Setter Property="VisualStateManager.VisualStateGroups">
+			<VisualStateGroupList>
+				<VisualStateGroup Name="EstadosComunes">
+					<VisualState Name="Normal" >
+						<VisualState.Setters>
+							<Setter Property="BackgroundColor" Value="DarkBlue"/>
+						</VisualState.Setters>
+					</VisualState>
+					<VisualState Name="Disabled" >
+						<VisualState.Setters>
+							<Setter Property="BackgroundColor" Value="DimGray"/>
+						</VisualState.Setters>
+					</VisualState>
+					<VisualState Name="Pressed" >
+						<VisualState.Setters>
+							<Setter Property="BackgroundColor" Value="Black"/>
+						</VisualState.Setters>
+					</VisualState>
+					<VisualState Name="PointerOver" >
+						<VisualState.Setters>
+							<Setter Property="BackgroundColor" Value="Blue"/>
+						</VisualState.Setters>
+					</VisualState>
+				</VisualStateGroup>
+			</VisualStateGroupList>
+		</Setter>
 	</Style>
-	<Style x:Key="EstiloBotonNoActivo" TargetType="Button" BasedOn="{StaticResource EstiloBoton}">
-		<Setter Property="TextColor" Value="White"/>
-		<Setter Property="BackgroundColor" Value="Gray"/>
-	</Style>
+
 	<Style x:Key="EstiloBotonAvanzar" TargetType="Button" BasedOn="{StaticResource EstiloBoton}">
-		<Setter Property="TextColor" Value="White"/>
-		<Setter Property="BackgroundColor" Value="Green"/>
+		<Setter Property="VisualStateManager.VisualStateGroups">
+			<VisualStateGroupList>
+				<VisualStateGroup Name="EstadosComunes">
+					<VisualState Name="Normal" >
+						<VisualState.Setters>
+							<Setter Property="BackgroundColor" Value="DarkGreen"/>
+						</VisualState.Setters>
+					</VisualState>
+					<VisualState Name="Disabled" >
+						<VisualState.Setters>
+							<Setter Property="BackgroundColor" Value="DimGray"/>
+						</VisualState.Setters>
+					</VisualState>
+					<VisualState Name="Pressed" >
+						<VisualState.Setters>
+							<Setter Property="BackgroundColor" Value="Black"/>
+						</VisualState.Setters>
+					</VisualState>
+					<VisualState Name="PointerOver" >
+						<VisualState.Setters>
+							<Setter Property="BackgroundColor" Value="Green"/>
+						</VisualState.Setters>
+					</VisualState>
+				</VisualStateGroup>
+			</VisualStateGroupList>
+		</Setter>
 	</Style>
 	<Style x:Key="EstiloBotonPeligro" TargetType="Button" BasedOn="{StaticResource EstiloBoton}">
-		<Setter Property="TextColor" Value="White"/>
-		<Setter Property="BackgroundColor" Value="DarkRed"/>
+		<Setter Property="VisualStateManager.VisualStateGroups">
+			<VisualStateGroupList>
+				<VisualStateGroup Name="EstadosComunes">
+					<VisualState Name="Normal" >
+						<VisualState.Setters>
+							<Setter Property="BackgroundColor" Value="DarkRed"/>
+						</VisualState.Setters>
+					</VisualState>
+					<VisualState Name="Disabled" >
+						<VisualState.Setters>
+							<Setter Property="BackgroundColor" Value="DimGray"/>
+						</VisualState.Setters>
+					</VisualState>
+					<VisualState Name="Pressed" >
+						<VisualState.Setters>
+							<Setter Property="BackgroundColor" Value="Black"/>
+						</VisualState.Setters>
+					</VisualState>
+					<VisualState Name="PointerOver" >
+						<VisualState.Setters>
+							<Setter Property="BackgroundColor" Value="Red"/>
+						</VisualState.Setters>
+					</VisualState>
+				</VisualStateGroup>
+			</VisualStateGroupList>
+		</Setter>
 	</Style>
 
 </ResourceDictionary>

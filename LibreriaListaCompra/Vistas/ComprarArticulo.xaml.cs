@@ -26,9 +26,9 @@ public partial class ComprarArticulo : ContentPage
 
 	private void PrepararBotones()
 	{
-		EstilosBotones.BotonCorto(botonFiltrar);
-		EstilosBotones.BotonCorto(botonElegir);
-		EstilosBotones.BotonCorto(botonCancelar);
+		TiposBotones.BotonCorto(botonFiltrar);
+		TiposBotones.BotonCorto(botonElegir);
+		TiposBotones.BotonCorto(botonCancelar);
 	}
 
 	protected override void OnAppearing()
@@ -59,6 +59,7 @@ public partial class ComprarArticulo : ContentPage
 	private void ItemElegido(object sender, SelectedItemChangedEventArgs e)
 	{
 		indiceElegido = e.SelectedItemIndex;
+		botonElegir.IsEnabled = (indiceElegido > -1);
 	}
 
 	private void Cancelar(object sender, EventArgs e)

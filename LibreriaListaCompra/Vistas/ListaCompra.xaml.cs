@@ -19,6 +19,9 @@ public partial class ListaCompra : ContentPage
 
 		InitializeComponent();
 
+#if WINDOWS
+		gridPrincipal.MaximumWidthRequest = Estilos.MAXIMAANCHURA;
+#endif
 		vistaLista.SelectedItem = null;
 		PrepararBotones();
 
@@ -28,9 +31,9 @@ public partial class ListaCompra : ContentPage
 
 	private void PrepararBotones()
 	{
-		TiposBotones.BotonCorto(botonFiltrar);
+		/*TiposBotones.BotonCorto(botonFiltrar);
 		TiposBotones.BotonCorto(botonComprar);
-		TiposBotones.BotonCorto(botonBorrar);
+		TiposBotones.BotonCorto(botonBorrar);*/
 	}
 
 	protected override void OnAppearing()

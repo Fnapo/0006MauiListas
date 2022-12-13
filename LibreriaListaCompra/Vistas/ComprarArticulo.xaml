@@ -4,10 +4,11 @@
 			 x:Class="LibreriaListaCompra.Vistas.ComprarArticulo"
 			 x:Name="MiCompra"
 			 NavigationPage.HasBackButton="False"
-			 BackgroundColor="LightGray"
+			 Style="{StaticResource EstiloPaginaGeneral}"
 			 Title="Comprar un Articulo">
 
-	<Grid ColumnDefinitions="*" RowDefinitions="auto,auto,*,auto" >
+	<Grid ColumnDefinitions="*" RowDefinitions="auto,auto,*,auto" x:Name="gridPrincipal" 
+	Style="{StaticResource EstiloGridPrincipal} ">
 
 		<StackLayout Orientation="Horizontal" Grid.Column="0" Grid.Row="0" >
 			<Label Text="FILTRO: " HorizontalOptions="Start" Margin="5,0" VerticalTextAlignment="Center"
@@ -40,14 +41,14 @@
 			</ListView.ItemTemplate>
 		</ListView>
 		<!--</StackLayout>-->
-		<StackLayout Orientation="Horizontal" Grid.Column="0" Grid.Row="3" >
+		<Grid ColumnDefinitions="3*,14*,3*" RowDefinitions="auto,auto" Grid.Column="0" Grid.Row="3"
+		RowSpacing="5">
 			<Button Text="elegir producto" Style="{StaticResource EstiloBotonAvanzar}"
-				HorizontalOptions="CenterAndExpand" VerticalOptions="Center" IsEnabled="False"
-				Clicked="ElegirProducto" x:Name="botonElegir" />
-			<Button Text="cancelar" Style="{StaticResource EstiloBotonPeligro}"
-				HorizontalOptions="CenterAndExpand" VerticalOptions="Center" 
-				Clicked="Cancelar" x:Name="botonCancelar" />
-		</StackLayout>
+				IsEnabled="False" Clicked="ElegirProducto" x:Name="botonElegir"
+				Grid.Column="1" Grid.Row="0" />
+			<Button Text="cancelar compra" Style="{StaticResource EstiloBotonPeligro}"
+				Clicked="Cancelar" x:Name="botonCancelar" Grid.Column="1" Grid.Row="1" />
+		</Grid>
 
 	</Grid>
 </ContentPage>

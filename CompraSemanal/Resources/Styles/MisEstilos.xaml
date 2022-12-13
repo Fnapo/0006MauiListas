@@ -4,6 +4,22 @@
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
 
+	<Style x:Key="EstiloPaginaGeneral" TargetType="ContentPage" >
+		<Setter Property="BackgroundColor" Value="Wheat" />
+	</Style>
+	<Style x:Key="EstiloGridPrincipal" TargetType="Grid" >
+		<Setter Property="HorizontalOptions" Value="Fill"/>
+		<Setter Property="Margin" Value="0,5"/>
+		<Setter Property="RowSpacing" Value="5"/>
+	</Style>
+	<Style x:Key="EstiloGridCentrada" TargetType="Grid" BasedOn="{StaticResource EstiloGridPrincipal}" >
+		<Setter Property="VerticalOptions" Value="Center"/>
+	</Style>
+	<Style x:Key="EstiloStackCentrada" TargetType="StackLayout" >
+		<Setter Property="HorizontalOptions" Value="Fill"/>
+		<Setter Property="VerticalOptions" Value="Center"/>
+	</Style>
+
 	<Style x:Key="EstiloEntry" TargetType="Entry">
 		<Setter Property="FontAttributes" Value="Bold"/>
 		<Setter Property="BackgroundColor" Value="Azure"/>
@@ -27,6 +43,10 @@
 		<Setter Property="TextColor" Value="Black" />
 		<!--<Setter Property="FontSize" Value="Caption" />-->
 	</Style>
+	<Style x:Key="EstiloLabelCampo" TargetType="Label" BasedOn="{StaticResource EstiloLabel}" >
+		<Setter Property="TextColor" Value="Black"/>
+		<Setter Property="BackgroundColor" Value="White"/>
+	</Style>
 	<Style x:Key="EstiloLabelError" TargetType="Label" BasedOn="{StaticResource EstiloLabel}" >
 		<Setter Property="TextColor" Value="Red"/>
 		<Setter Property="BackgroundColor" Value="White"/>
@@ -49,12 +69,15 @@
 		<Setter Property="TextColor" Value="Green"/>
 	</Style>
 	<Style x:Key="EstiloBoton" TargetType="Button">
-		<!--<Setter Property="WidthRequest" Value="150"/>
-		<Setter Property="LineBreakMode" Value="WordWrap" />
-		<Setter Property="FontSize" Value="Caption" />-->
-		<Setter Property="TextTransform" Value="Uppercase"/>
+		<!--<Setter Property="WidthRequest" Value="150"/>		
+		<Setter Property="FontSize" Value="Caption" />		
 		<Setter Property="Padding" Value="20,5"/>
-		<Setter Property="Margin" Value="5"/>
+				<Setter Property="LineBreakMode" Value="WordWrap" />
+		<Setter Property="HorizontalOptions" Value="Fill" />
+		<Setter Property="Margin" Value="5"/>-->
+		<Setter Property="HorizontalOptions" Value="Fill" />
+		<Setter Property="VerticalOptions" Value="CenterAndExpand" />
+		<Setter Property="TextTransform" Value="Uppercase"/>
 		<Setter Property="FontAttributes" Value="Bold"/>
 		<Setter Property="TextColor" Value="White"/>
 	</Style>

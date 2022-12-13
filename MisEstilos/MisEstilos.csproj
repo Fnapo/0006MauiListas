@@ -18,6 +18,10 @@
 	</PropertyGroup>
 
 	<ItemGroup>
+	  <Compile Remove="TiposBotones.cs" />
+	</ItemGroup>
+
+	<ItemGroup>
 	  <None Remove="EstiloBotones.cs~RF19198b25.TMP" />
 	</ItemGroup>
 

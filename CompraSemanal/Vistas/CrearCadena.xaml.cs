@@ -22,6 +22,10 @@ public partial class CrearCadena : ContentPage
 	{
 		InitializeComponent();
 
+#if WINDOWS
+		gridPrincipal.MaximumWidthRequest = Estilos.MAXIMAANCHURA;
+#endif
+
 		PrepararBotones();
 		//CrearConfiguracion();
 		//LeerConfiguracion();
@@ -35,7 +39,7 @@ public partial class CrearCadena : ContentPage
 
 	private void PrepararBotones()
 	{
-		TiposBotones.BotonLargo(xBotonProbar);
+		//TiposBotones.BotonLargo(xBotonProbar);
 	}
 
 	private void OcultarErrores()

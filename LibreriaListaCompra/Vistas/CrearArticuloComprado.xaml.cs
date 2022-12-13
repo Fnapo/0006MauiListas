@@ -18,13 +18,16 @@ public partial class CrearArticuloComprado : ContentPage
 
 		InitializeComponent();
 
+#if WINDOWS
+		gridPrincipal.MaximumWidthRequest = Estilos.MAXIMAANCHURA;
+#endif
 		PrepararBotones();
 	}
 
 	private void PrepararBotones()
 	{
-		TiposBotones.BotonCorto(botonCrear);
-		TiposBotones.BotonCorto(botonCancelar);
+		//TiposBotones.BotonLargo(botonCrear);
+		//TiposBotones.BotonLargo(botonCancelar);
 	}
 
 	protected override void OnAppearing()

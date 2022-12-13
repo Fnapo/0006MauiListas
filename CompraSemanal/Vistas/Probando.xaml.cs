@@ -12,6 +12,9 @@ public partial class Probando : ContentPage
 	{
 		InitializeComponent();
 
+#if WINDOWS
+		gridPrincipal.MaximumWidthRequest = Estilos.MAXIMAANCHURA;
+#endif
 		_cadena = cadena;
 		Preparacion();
 		ProbarConexion();
@@ -22,9 +25,9 @@ public partial class Probando : ContentPage
 	{
 		Mensaje.IsVisible = false;
 		Indicador.IsRunning = true;
-		TiposBotones.BotonLargo(BotonLeer);
+		/*TiposBotones.BotonLargo(BotonLeer);
 		TiposBotones.BotonLargo(BotonSalir);
-		TiposBotones.BotonLargo(BotonVolver);
+		TiposBotones.BotonLargo(BotonVolver);*/
 	}
 
 	private async void Volver(object sender, EventArgs e)

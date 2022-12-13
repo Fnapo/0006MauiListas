@@ -19,6 +19,9 @@ public partial class LeerDatos : ContentPage
 	{
 		InitializeComponent();
 
+#if WINDOWS
+		gridPrincipal.MaximumWidthRequest = Estilos.MAXIMAANCHURA;
+#endif
 		Indicador.IsRunning = true;
 		BotonesInicio();
 		LeerDatosArticulos();
@@ -27,8 +30,8 @@ public partial class LeerDatos : ContentPage
 	private void BotonesInicio()
 	{
 		botonSalir.IsEnabled = botonCrear.IsEnabled = false;
-		TiposBotones.BotonLargo(botonCrear);
-		TiposBotones.BotonLargo(botonSalir);
+		/*TiposBotones.BotonLargo(botonCrear);
+		TiposBotones.BotonLargo(botonSalir);*/
 	}
 
 	private void Salir(object sender, EventArgs e)

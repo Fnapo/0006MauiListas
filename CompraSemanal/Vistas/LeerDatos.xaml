@@ -3,17 +3,19 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="CompraSemanal.Vistas.LeerDatos"
 			 NavigationPage.HasBackButton="False"
-			 BackgroundColor="LightGray"
+			 Style="{StaticResource EstiloPaginaGeneral}"
              Title="Leyendo los Datos">
 
-	<Grid ColumnDefinitions="*" RowDefinitions="*,*" >
-		<VerticalStackLayout VerticalOptions="Center" Spacing="5">
+	<Grid x:Name="gridPrincipal" ColumnDefinitions="*" RowDefinitions="*,*"
+	Style="{StaticResource EstiloGridPrincipal}" >
+		<Grid ColumnDefinitions="3*,14*,3*" RowDefinitions="auto,auto" 
+		Style="{StaticResource EstiloGridCentrada}" RowSpacing="5">
 			<Button x:Name="botonCrear" Text="crear lista" Clicked="CrearLista" IsEnabled="False"
-				Style="{StaticResource EstiloBotonAvanzar}" HorizontalOptions="CenterAndExpand" />
+				Style="{StaticResource EstiloBotonAvanzar}" Grid.Column="1" Grid.Row="0" />
 			<Button x:Name="botonSalir" Text="salir" Clicked="Salir" IsEnabled="False"
-				Style="{StaticResource EstiloBotonPeligro}" HorizontalOptions="CenterAndExpand" />
-		</VerticalStackLayout>
-		<ActivityIndicator x:Name="Indicador" Color="White" IsRunning="False" Grid.Row="1" />
+				Style="{StaticResource EstiloBotonPeligro}" Grid.Column="1" Grid.Row="1" />
+		</Grid>
+		<ActivityIndicator x:Name="Indicador" Color="BlueViolet" IsRunning="False" Grid.Row="1" />
 		<Label x:Name="Mensaje" Text="Leyendo" FontSize="Small" Grid.Row="1" 
 		IsVisible="False" Style="{StaticResource EstiloLabelAvisoError}" />
 	</Grid>

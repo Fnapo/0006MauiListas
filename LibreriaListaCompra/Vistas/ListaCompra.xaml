@@ -4,11 +4,12 @@
 			x:Class="LibreriaListaCompra.Vistas.ListaCompra"
 			x:Name="MiLista"
 			xmlns:templates="clr-namespace:LibreriaListaCompra.Vistas"
-			BackgroundColor="LightGray"
+			Style="{StaticResource EstiloPaginaGeneral}"
 			NavigationPage.HasBackButton="False"
 			Title="Lista de la Compra">
 
-	<Grid ColumnDefinitions="*" RowDefinitions="auto,auto,*,auto" >
+	<Grid ColumnDefinitions="*" RowDefinitions="auto,auto,*,auto" x:Name="gridPrincipal"
+	Style="{StaticResource EstiloGridPrincipal} ">
 
 		<StackLayout Orientation="Horizontal" Grid.Column="0" Grid.Row="0" >
 			<Label Text="FILTRO: " HorizontalOptions="Start" Margin="5,0" VerticalTextAlignment="Center"
@@ -32,7 +33,7 @@
 							<Label Grid.Column="0" Grid.Row="0" Text="{Binding Descripcion}"/>
 							<Label Grid.Column="0" Grid.Row="1" Text="{Binding TextoOferta}"/>
 							<Label Grid.Column="0" Grid.Row="2" Text="{Binding Coste, 
-										StringFormat='El coste es {0:F2} €'}" />
+								StringFormat='El coste es {0:F2} €'}" />
 							<!-- VerticalOptions="End"/>-->
 						</Grid>
 						<!--</Frame>-->
@@ -40,14 +41,15 @@
 				</DataTemplate>
 			</ListView.ItemTemplate>
 		</ListView>
-		<StackLayout Orientation="Horizontal" Grid.Column="0" Grid.Row="3" >
+		<Grid ColumnDefinitions="3*,14*,3*" RowDefinitions="auto,auto" Grid.Column="0" Grid.Row="3"
+		RowSpacing="5">
 			<Button Text="comprar producto" Style="{StaticResource EstiloBotonAvanzar}"
-				HorizontalOptions="CenterAndExpand" VerticalOptions="Center"
-				Clicked="AbrirComprarArticulo" x:Name="botonComprar" />
+				VerticalOptions="Center" Clicked="AbrirComprarArticulo" x:Name="botonComprar"
+				Grid.Column="1" Grid.Row="0" />
 			<Button Text="borrar ítem" Style="{StaticResource EstiloBotonPeligro}"
-				HorizontalOptions="CenterAndExpand" VerticalOptions="Center" IsEnabled="False"
-				Clicked="BorrarItem" x:Name="botonBorrar" />
-		</StackLayout>
+				IsEnabled="False" Clicked="BorrarItem" x:Name="botonBorrar"
+				Grid.Column="1" Grid.Row="1" />
+		</Grid>
 
 	</Grid>
 </ContentPage>
